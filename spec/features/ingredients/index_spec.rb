@@ -7,7 +7,7 @@ RSpec.describe "Ingerdients index" do
     it 'sees all ingredients and cost' do
 
       ingredient1 = Ingredient.create!(name: "Ground Beef", cost: 2)
-      ingredient1 = Ingredient.create!(name: "Salt", cost: 4)
+      ingredient2 = Ingredient.create!(name: "Salt", cost: 4)
 
       visit "/ingredients"
       # When I visit '/ingredients'
