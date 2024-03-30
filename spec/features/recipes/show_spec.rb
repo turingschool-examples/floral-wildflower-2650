@@ -23,4 +23,21 @@ RSpec.describe "Recipe show" do
       
     end
   end
+
+  describe '#us 3 ' do
+    it 'gets the total cost of the ingredients' do
+      recipe1 = Recipe.create!(name: "Carne Asada", complexity: 3, genre: "Latin" )
+
+      ingredient1 = recipe1.ingredients.create!(name: "Steak", cost: 5)
+      ingredient2 = recipe1.ingredients.create!(name: "Salt", cost: 4)
+
+      visit "/recipes/#{recipe1.id}"
+        # When I visit '/recipes/:id'
+        # I see the total cost of all of the ingredients in the recipe.
+        # (e.g. "Total Cost: 22")
+        save_and_open_page
+      
+      expect(page).to have_content("Total Cost: 9")
+    end
+  end
 end
