@@ -1,0 +1,5 @@
+<h1> Ingredients </h1>
+<% @ingredients.sort_alph.each do |ingredient| %>
+<p>Ingredient: <%= ingredient.name %><br>
+Cost: <%= ingredient.cost %></p>
+<% end %>

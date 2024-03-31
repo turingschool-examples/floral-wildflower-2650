@@ -1,0 +1,9 @@
+<h1> <%= @recipe.name %> </h1>
+
+Complexity Level out of 10: <%= @recipe.complexity %><br>
+Genre: <%= @recipe.genre %><br>
+Total Cost of Meal: $<%= @recipe.cost %>
+<h2>List of Ingredients:</h2>
+<% @ingredients.each do |ingredient| %>
+  <ul>-<%= ingredient.name %></ul>
+<% end %>
