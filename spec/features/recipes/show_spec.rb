@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "the recipe show page" do
-  it "shows the recipe's name, complexity and genre and the ingredients for the recipe" do
+  it "shows the recipe's name, complexity and genre, as well as the ingredients and total cost for the recipe" do
     spaghetti_with_meat_sauce = Recipe.create!(name: "Spaghetti with Meat Sauce", complexity: 3, genre: "Italian")
     spaghetti_with_meat_sauce.ingredients.create!(name: "Tomatoes", cost: 4)
     spaghetti_with_meat_sauce.ingredients.create!(name: "Spaghetti", cost: 5)
@@ -23,16 +23,17 @@ RSpec.describe "the recipe show page" do
     expect(page).to have_content("Tomatoes")
     expect(page).to have_content("Beef")
     expect(page).to have_content("Basil")
+    expect(page).to have_content("Total Cost: $20")
 
     expect(page).to_not have_content("Butter")
   end
 end
 
 
-# User Story 2 - Recipes Show
+# User Story 3 - Total Cost
 
 # As a visitor,
-# When I visit '/recipes/:id',
-# Then I see the recipe's name, complexity and genre,
-# and I see a list of the names of the ingredients for the recipe.
+# When I visit '/recipes/:id'
+# I see the total cost of all of the ingredients in the recipe.
+# (e.g. "Total Cost: 22")
 
