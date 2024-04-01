@@ -16,9 +16,9 @@ RSpec.describe "Ingredient index" do
       visit '/ingredients'
       # I see a list of all the ingredients including their name and cost
       # (e.g. "Ground Beef: 2", "Salt: 4")
-      expect(page).to have_content("oregano: 1")
-      expect(page).to have_content("basil: 2")
-      expect(page).to have_content("salt: 1")
+      expect(page).to have_content("oregano - Cost: 1")
+      expect(page).to have_content("basil - Cost: 2")
+      expect(page).to have_content("salt - Cost: 1")
     end
   end
 end
