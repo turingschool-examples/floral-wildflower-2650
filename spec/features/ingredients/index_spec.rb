@@ -9,7 +9,7 @@ RSpec.describe "the ingredient index" do
     Ingredient.create!(name: "Basil", cost: 1)
     
     visit "/ingredients"
-    save_and_open_page
+
     expect(page).to have_content("Tomatoes: 4")
     expect(page).to have_content("Spaghetti: 5")
     expect(page).to have_content("Mushrooms: 3")
@@ -17,14 +17,3 @@ RSpec.describe "the ingredient index" do
     expect(page).to have_content("Basil: 1")
   end
 end
-
-
-
-
-# User Story 1 - Ingredients Index
-
-# As a visitor,
-# When I visit '/ingredients'
-# I see a list of all the ingredients including their name and cost
-# (e.g. "Ground Beef: 2"
-#      "Salt: 4")
