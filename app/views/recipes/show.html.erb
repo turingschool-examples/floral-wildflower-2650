@@ -1,0 +1,9 @@
+<h1> RECIPES </h1>
+
+<p> Name: <%= @recipe.name %> </p>
+<p> Complexity: <%= @recipe.complexity %> </p>
+<p> Genre: <%= @recipe.genre %> </p>
+<p> Ingredients: </p>
+<% @recipe.ingredients.each do |ingredient| %>
+  <ul> <%= ingredient.name %>: <%= ingredient.cost %> </ul>
+<% end %>

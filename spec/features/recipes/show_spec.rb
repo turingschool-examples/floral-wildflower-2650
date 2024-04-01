@@ -2,14 +2,16 @@ require "rails_helper"
 
 RSpec.describe "the recipe show page" do
   it "shows the recipe's name, complexity and genre and the ingredients for the recipe" do
-    tomatoes = Ingredient.create!(name: "Tomatoes", cost: 4)
-    spaghetti = Ingredient.create!(name: "Spaghetti", cost: 5)
-    beef = Ingredient.create!(name: "Ground Beef", cost: 10)
-    basil = Ingredient.create!(name: "Basil", cost: 1)
-    butter = Ingredient.create!(name: "butter", cost: 3)
-
     spaghetti_with_meat_sauce = Recipe.create!(name: "Spaghetti with Meat Sauce", complexity: 3, genre: "Italian")
+    spaghetti_with_meat_sauce.ingredients.create!(name: "Tomatoes", cost: 4)
+    spaghetti_with_meat_sauce.ingredients.create!(name: "Spaghetti", cost: 5)
+    spaghetti_with_meat_sauce.ingredients.create!(name: "Ground Beef", cost: 10)
+    spaghetti_with_meat_sauce.ingredients.create!(name: "Basil", cost: 1)
+
     spaghetti_with_butter = Recipe.create!(name: "Spaghetti with Butter", complexity: 1, genre: "Lazy")
+    spaghetti_with_butter.ingredients.create!(name: "Spaghetti", cost: 5)
+    spaghetti_with_butter.ingredients.create!(name: "Butter", cost: 3)
+    spaghetti_with_butter.ingredients.create!(name: "Basil", cost: 1)
 
     visit "/recipes/#{spaghetti_with_meat_sauce.id}"
 
