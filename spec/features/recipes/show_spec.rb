@@ -16,7 +16,7 @@ RSpec.describe "Recipes Show Page" do
 
       expect(page).to_not have_content("Pasta")
       expect(page).to_not have_content("1")
-      expect(page).to_not have_content("Soul food")
+      expect(page).to_not have_content("Italian")
     end
   end
 end
