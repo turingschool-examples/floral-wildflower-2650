@@ -27,13 +27,22 @@ RSpec.describe 'Ingredients Index Page' do
     it 'displays all ingredients with their name and cost' do
       visit "/ingredients"
       
-      save_and_open_page
       expect(page).to have_content(@tomato.name)
       expect(page).to have_content(@tomato.cost)
       expect(page).to have_content(@onion.name)
       expect(page).to have_content(@onion.cost)
       expect(page).to have_content(@garlic.name)
       expect(page).to have_content(@garlic.cost)
+    end
+  end
+  
+  describe 'Extension 1' do
+    it 'sorts the ingredients alphabetically' do
+      visit "/ingredients"
+
+      expect(@garlic.name).to appear_before(@onion.name)
+      expect(@onion.name).to appear_before(@tomato.name)
+      expect(@tomato.name).to_not appear_before(@garlic.name)
     end
   end
 end

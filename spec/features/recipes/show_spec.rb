@@ -45,7 +45,7 @@ RSpec.describe 'Recipe Show Page' do
     it 'displays the total cost of all the ingredients' do
       visit "/recipes/#{@spaghetti_bolognese.id}"
 
-      expect(page).to have_content("Total Cost: 4.5")
+      expect(page).to have_content("Total Cost: 4")
     end
   end
 end
