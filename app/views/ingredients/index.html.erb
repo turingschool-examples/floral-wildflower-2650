@@ -1,0 +1,5 @@
+<% @ingredients.each do |ingredient| %>
+  <div id="ingredient_<%= ingredient.id %>_info">
+    <%= ingredient.name %>: <%= ingredient.cost %>
+  </div>
+<% end %>
