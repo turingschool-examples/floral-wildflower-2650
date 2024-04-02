@@ -1,0 +1,28 @@
+<div class="list-wrapper">
+
+  <div class="list-description">
+    Recipe for <b><%= @recipe.name %></b>
+  </div>
+
+  <div class="list-description">
+    Complexity rating: <%= @recipe.complexity %>
+  </div>
+
+  <div class="list-description">
+    Genre: <%= @recipe.genre %>
+  </div>
+
+  <div class="list">
+    <% @ingredients.each do |ingredient| %>
+      <div class="list-item">
+        <div class="item-name"><%= ingredient.name %></div>
+        <div class="item-info">$<%= ingredient.cost %>.00</div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="cost">
+    Total cost: $<%= @total_cost %>.00
+  </div>
+
+</div>

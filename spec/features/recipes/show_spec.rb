@@ -68,7 +68,7 @@ RSpec.describe "Recipes show page functionality" do
   it "shows a list of the recipe's ingredients" do
     visit "/recipes/#{@pasta_with_red_sauce.id}"
 
-    within ".ingredients-list" do
+    within ".list" do
       expect(page).to have_content(@ground_beef.name)
       expect(page).to have_content(@salt.name)
       expect(page).to have_content(@tomato_sauce.name)
