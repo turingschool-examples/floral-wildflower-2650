@@ -12,4 +12,14 @@ RSpec.describe Ingredient, type: :model do
       it { should have_many(:recipes).through(:recipe_ingredients) }
    end
 
+   before(:each) do
+      @ingredient_1 = Ingredient.create!(name: "Beef", cost: 40)
+      @ingredient_2 = Ingredient.create!(name: "Chicken", cost: 20)  
+   end
+
+   describe "#sorted_alphabetically" do
+      it "returns names in order" do
+         expect(Ingredient.sorted_alphabetically).to eq([@ingredient_1, @ingredient_2])
+      end
+   end
 end
