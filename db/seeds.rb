@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# Recipes will have a name, complexity and genre. For example Pasta, 2 (integer), Italian.
+print "Creating Recipes"
+sleep(1)
+Recipe.create!(name: "Garlic Bread", complexity: 1, genre: "Italian")
+Recipe.create!(name: "Ground Beef Stir Fry", complexity: 1, genre: "Asian")
+puts " - Done"
 
 # Ingredients will have a name and a cost stored as an integer.
 print "Creating Ingredients"
@@ -18,9 +24,14 @@ Ingredient.create!(name: "Bread", cost: 3)
 Ingredient.create!(name: "Butter", cost: 4)
 puts " - Done"
 
-# Recipes will have a name, complexity and genre. For example Pasta, 2 (integer), Italian.
-print "Creating Recipes"
+# RecipeIngredients
+print "Linking Recipes and Ingredients"
 sleep(1)
-Recipe.create!(name: "Garlic Bread", complexity: 1, genre: "Italian")
-Recipe.create!(name: "Ground Beef Stir Fry", complexity: 1, genre: "Asian")
+RecipeIngredient.create!(recipe_id: 1, ingredient_id: 4)
+RecipeIngredient.create!(recipe_id: 1, ingredient_id: 5)
+RecipeIngredient.create!(recipe_id: 1, ingredient_id: 6)
+RecipeIngredient.create!(recipe_id: 2, ingredient_id: 1)
+RecipeIngredient.create!(recipe_id: 2, ingredient_id: 2)
+RecipeIngredient.create!(recipe_id: 2, ingredient_id: 3)
+RecipeIngredient.create!(recipe_id: 2, ingredient_id: 4)
 puts " - Done"
