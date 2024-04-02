@@ -26,7 +26,7 @@ RSpec.describe "recipes show page", type: :feature do
         end
     end
 
-    # User Story 3
+    # # User Story 3
     it "recipes show page lists total cost of recipe" do
         @recipe = Recipe.create!(name: "Ground Beef Stir Fry", complexity: 1, genre: "Asian")       
         @recipe.ingredients.create!(name: "Ground Beef", cost: 6)
@@ -36,7 +36,7 @@ RSpec.describe "recipes show page", type: :feature do
         visit "/recipes/#{@recipe.id}"
         save_and_open_page
 
-        expect(page).to have_content ("#{@recipe.total_cost}")
+        expect(page).to have_content ("$#{@recipe.total_cost}")
         expect(@recipe.total_cost).to eq(9)
     end
 
