@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Ingredients Index Page" do
   before(:each) do
     @ingredient_1 = Ingredient.create!(name: "BBQ", cost: 2)
-    @ingredient_1 = Ingredient.create!(name: "Chicken", cost: 12)
+    @ingredient_2 = Ingredient.create!(name: "Chicken", cost: 12)
   end
   
   describe 'User Story 1' do
