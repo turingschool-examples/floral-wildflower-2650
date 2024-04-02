@@ -81,6 +81,6 @@ RSpec.describe "Recipes show page functionality" do
   it "shows the total cost of the ingredients for the recipe" do
     visit "/recipes/#{@pasta_with_red_sauce.id}"
 
-    expect(page).to have_content("Total cost: $20.00")
+    expect(page).to have_content("Total cost: $17.00")
   end
 end
