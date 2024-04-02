@@ -26,7 +26,7 @@ RSpec.describe 'Recipe Show Page' do
   describe 'User Story 2' do
     it 'has a recipes complexity, name, and genre' do
       visit "/recipes/#{@spaghetti_bolognese.id}"
-save_and_open_page
+
       expect(page).to have_content(@spaghetti_bolognese.name)
       expect(page).to have_content(@spaghetti_bolognese.complexity)
       expect(page).to have_content(@spaghetti_bolognese.genre) 
@@ -38,6 +38,14 @@ save_and_open_page
       expect(page).to have_content(@tomato.name)
       expect(page).to have_content(@onion.name)
       expect(page).to have_content(@garlic.name) 
+    end
+  end
+
+  describe 'User Story 3' do
+    it 'displays the total cost of all the ingredients' do
+      visit "/recipes/#{@spaghetti_bolognese.id}"
+
+      expect(page).to have_content("Total Cost: 4.5")
     end
   end
 end
