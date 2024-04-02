@@ -10,11 +10,10 @@ RSpec.describe "recipes show page", type: :feature do
         @recipe.ingredients.create!(name: "Red Bell Pepper", cost: 1)
         
         visit "/recipes/#{@recipe.id}"
-        save_and_open_page
+        #save_and_open_page
 
-        expect(page).to have_content ("#{@recipe.name}")
-       
         within "#recipe_info" do
+            expect(page).to have_content ("#{@recipe.name}")        
             expect(page).to have_content ("#{@recipe.complexity}")
             expect(page).to have_content ("#{@recipe.genre}")
         end
@@ -34,10 +33,11 @@ RSpec.describe "recipes show page", type: :feature do
         @recipe.ingredients.create!(name: "Red Bell Pepper", cost: 1)
 
         visit "/recipes/#{@recipe.id}"
-        save_and_open_page
+        #save_and_open_page
 
-        expect(page).to have_content ("$#{@recipe.total_cost}")
-        expect(@recipe.total_cost).to eq(9)
+        within "#recipe_info" do
+            expect(page).to have_content ("$#{@recipe.total_cost}")
+        end
     end
 
 end

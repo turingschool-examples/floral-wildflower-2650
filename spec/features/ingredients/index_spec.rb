@@ -18,4 +18,5 @@ RSpec.describe "ingredients index page", type: :feature do
         expect(page).to have_content ("Bell Pepper")
         expect(page).to have_content ("1")
     end
+    
 end
