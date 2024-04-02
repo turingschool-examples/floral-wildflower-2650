@@ -1,0 +1,14 @@
+<div class="list-wrapper">
+  <div class="list-description">
+    List of all available ingredients:
+  </div>
+
+  <div class="list">
+    <% @ingredients.each do |ingredient| %>
+      <div class="list-item">
+        <div class="item-name"><%= ingredient.name %></div>
+        <div class="item-info">$<%= ingredient.cost %>.00</div>
+      </div>
+    <% end %>
+  </div>
+</div>
