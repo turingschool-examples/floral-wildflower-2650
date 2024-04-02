@@ -19,4 +19,18 @@ RSpec.describe "ingredients index page", type: :feature do
         expect(page).to have_content ("1")
     end
     
+    # Extension 1
+    describe "class methods" do
+        it '#sort_alphebtically' do
+            @ing_1 = Ingredient.create!(name: "Red Bell Pepper", cost: 1)        
+            @ing_2 = Ingredient.create!(name: "Ground Beef", cost: 6)
+            @ing_3 = Ingredient.create!(name: "Onion", cost: 2)
+
+            visit "/ingredients"
+            save_and_open_page
+
+            expect(@ing_2.name).to appear_before(@ing_3.name)
+            expect(@ing_3.name).to appear_before(@ing_1.name)
+        end
+    end
 end
